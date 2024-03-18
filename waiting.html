@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <style>
+        /* 在這裡可以加入自定義的 CSS 樣式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* 確保圖片填滿整個視窗 */
+        }
+        header {
+            width: 100%;
+            height: 100px;
+            background-color: #333;
+            text-align: center;
+            color: #fff;
+            padding: 20px;
+        }
+        img#logo {
+            width: 200px; /* 調整這裡的值以符合你的需求 */
+            display: block;
+            margin: 0 auto;
+            cursor: pointer; /* 添加游標樣式以指示該圖片是可點擊的 */
+        }
+        #content {
+            text-align: center;
+            position: fixed; /* 將內容固定在視窗中 */
+            top: 100px; /* 與 header 高度相同 */
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('車_.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: -1; /* 確保內容在 logo 下面 */
+        }
+        .line {
+            font-size: 25px;
+            line-height: 55px;
+            display: block;
+            text-align: center;
+            z-index: 1; /* 確保文字在背景圖片的上層 */
+        }
+    </style>
+</head>
+<body>
+
+<a href="https://www.thsrc.com.tw/">
+    <img id="logo" src="logo.svg" alt="我的網頁 logo">
+</a>
+
+<div id="content">
+    <!-- 這裡是車的圖片，作為背景圖顯示 -->
+</div>
+
+<span class="line" id="line">
+    Oops!! Please wait a moment and try again
+    <span id="dots">.....</span>
+</span>
+<br>
+<!-- 這裡可以放更多的內容 -->
+
+<script>
+    var dots = document.getElementById("dots");
+    var interval = setInterval(function() {
+        dots.innerHTML += ".";
+        if (dots.innerHTML.length > 6) dots.innerHTML = ".";
+    }, 500);
+</script>
+
+</body>
+</html>
